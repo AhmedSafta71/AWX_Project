@@ -1,0 +1,13 @@
+---
+- name: Hello World Playbook
+  hosts: localhost
+  gather_facts: yes
+  
+  tasks:
+    - name: Print hello message
+      debug:
+        msg: "Hello from AWX! Running on {{ inventory_hostname }}"
+    
+    - name: Show system info
+      debug:
+        msg: "OS: {{ ansible_os_family }}, Kernel: {{ ansible_kernel }}"
